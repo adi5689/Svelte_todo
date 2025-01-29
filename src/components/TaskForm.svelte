@@ -30,7 +30,7 @@
         isMarkedDone: false,
       });
 
-      // Reset fields & clear validation errors
+      // Resetting fields & clearing validation errors
       title = "";
       description = "";
       titleError = "";
@@ -43,7 +43,6 @@
 <form on:submit|preventDefault={handleAddTask} class="form add-task-card">
   <h2 class="sub-title">Add Task</h2>
 
-  <!-- Title Input -->
   <div class="form-group">
     <label for="title">Title</label>
     <input
@@ -59,7 +58,6 @@
     {/if}
   </div>
 
-  <!-- Description Input -->
   <div class="form-group">
     <label for="description">Description</label>
     <textarea
@@ -73,65 +71,5 @@
     {/if}
   </div>
 
-  <!-- Submit Button -->
   <button type="submit" class="btn" disabled={!isFormValid}>Add Todo</button>
 </form>
-
-<style>
-  .form {
-    background: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-  }
-
-  .form-group label {
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: var(--text-color);
-    margin-bottom: 5px;
-  }
-
-  input, textarea {
-    padding: 0.7rem;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-
-  /* Error Message */
-  .error {
-    color: red;
-    font-size: 0.85rem;
-    margin-top: 4px;
-  }
-
-  /* Disabled Button */
-  .btn {
-    width: 100%;
-    padding: 0.7rem;
-    border: none;
-    background: var(--primary-color);
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  .btn:hover {
-    background: #5a2bd8;
-  }
-
-  .btn:disabled {
-    background: gray;
-    cursor: not-allowed;
-  }
-</style>

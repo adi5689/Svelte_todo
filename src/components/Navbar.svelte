@@ -1,8 +1,4 @@
-<script>
-    import { links,link, useLocation } from "svelte-routing";
-  
-    // Use the useLocation hook to get the current location
-    const location = useLocation();
+<script>  
     const path2 = window.location.pathname;
 
     // Helper function to determine if a path is active
@@ -14,7 +10,6 @@
   <nav class="nav-bar">
     <div class="logo">TractDo</div>
     <div class="nav-links use:links">
-      <!-- Link to "Today's Tasks" -->
       <a
         href="/"
         class="nav-link {isActive('/') ? 'active' : ''}"
@@ -22,7 +17,6 @@
         Today's Tasks
     </a>
   
-      <!-- Link to "All Tasks" -->
       <a
         href="/all-tasks"
         class="nav-link {isActive('/all-tasks') ? 'active' : ''}"

@@ -1,9 +1,9 @@
 import { persisted } from 'svelte-local-storage-store';
 
-// Create a writable store for tasks with localStorage persistence
+// writable store for tasks with localStorage persistence
 export const tasks = persisted('tasks', []);
 
-// Function to add a task
+// Function to add task
 export function addTask(task) {
   tasks.update((existingTasks) => [
     ...existingTasks,
@@ -16,7 +16,7 @@ export function addTask(task) {
   ]);
 }
 
-// Function to update a task
+// Function to update task
 export function updateTask(taskId, updatedTask) {
   tasks.update((existingTasks) =>
     existingTasks.map((task) =>
@@ -27,7 +27,7 @@ export function updateTask(taskId, updatedTask) {
   );
 }
 
-// Function to delete a task
+// Function to delete task
 export function deleteTask(taskId) {
   tasks.update((existingTasks) =>
     existingTasks.filter((task) => task.id !== taskId)

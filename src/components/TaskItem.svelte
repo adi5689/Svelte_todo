@@ -29,7 +29,7 @@
       editingTaskId = task.id;
       editTitle = task.title;
       editDescription = task.description;
-      noChangesMessage = ""; // Reset message on new edit
+      noChangesMessage = "";
     }
   };
 
@@ -39,7 +39,7 @@
       setTimeout(() => {
         noChangesMessage = "";
         editingTaskId = null;
-      }, 1500); // Hide message after 1.5 seconds
+      }, 1500);
       return;
     }
 
@@ -50,7 +50,7 @@
     });
 
     editingTaskId = null;
-    noChangesMessage = ""; // Clear message after successful save
+    noChangesMessage = "";
   };
 
   function formatDate(dateString) {
@@ -153,88 +153,3 @@
     </div>
   {/if}
 </li>
-
-<style>
-  .task {
-    border-bottom: 1px solid var(--border-color);
-    padding: 1rem 0;
-  }
-
-  .task-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-  }
-
-  .task-header label {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1rem;
-  }
-
-  .task-header input[type="checkbox"] {
-    transform: scale(1.2);
-    accent-color: var(--primary-color);
-  }
-
-  .completed {
-    text-decoration: line-through;
-    color: red;
-    font-size: 24px;
-  }
-
-  .uncomplete {
-    font-size: 24px;
-  }
-
-  .task-actions button {
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-top: 5px;
-  }
-
-  .task-actions button:hover {
-    color: var(--primary-color);
-  }
-
-  .task-details {
-    padding: 0 1rem;
-    background: var(--bg-color);
-    border-radius: 5px;
-    margin-top: 0.5rem;
-    max-height: 0;
-    overflow: hidden;
-    transition:
-      max-height 0.3s ease,
-      padding 0.3s ease;
-  }
-
-  .task-details.open {
-    max-height: 500px;
-    padding: 1rem;
-  }
-
-  .arrow-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .arrow-container.rotate {
-    transform: rotate(-180deg);
-  }
-
-  .no-changes-msg {
-    color: red;
-    font-size: 14px;
-    margin-top: 10px;
-    text-align: center;
-    font-weight: bold;
-  }
-</style>
